@@ -1,6 +1,7 @@
 package net.lrks_89.mccourse;
 
 import com.mojang.logging.LogUtils;
+import net.lrks_89.mccourse.block.ModBlocks;
 import net.lrks_89.mccourse.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +28,7 @@ public class MCCourseMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -48,7 +50,10 @@ public class MCCourseMod {
             event.accept(ModItems.ALEXANDRITE);
             event.accept(ModItems.RAW_ALEXANDRITE);
         }
-
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.ALEXANDRITE_BLOCK);
+            event.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
