@@ -60,6 +60,9 @@ public class MCCourseMod {
             event.accept(ModBlocks.END_STONE_ALEXANDRITE_ORE);
             event.accept(ModBlocks.NETHER_ALEXANDRITE_ORE);
         }
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.METAL_DETECTOR);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
