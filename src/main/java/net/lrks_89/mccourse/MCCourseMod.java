@@ -2,6 +2,7 @@ package net.lrks_89.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.lrks_89.mccourse.block.ModBlocks;
+import net.lrks_89.mccourse.item.ModCreativeModeTabs;
 import net.lrks_89.mccourse.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +28,7 @@ public class MCCourseMod {
     public MCCourseMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
