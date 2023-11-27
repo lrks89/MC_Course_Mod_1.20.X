@@ -55,6 +55,8 @@ public class MCCourseMod {
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.ALEXANDRITE_BLOCK);
+            event.accept(ModBlocks.ALEXANDRITE_STAIRS);
+            event.accept(ModBlocks.ALEXANDRITE_SLAB);
             event.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK);
             event.accept(ModBlocks.ALEXANDRITE_ORE);
             event.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE);
