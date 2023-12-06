@@ -15,7 +15,7 @@ public class ModTags {
             return ItemTags.create(new ResourceLocation(MCCourseMod.MOD_ID, name));
         }
 
-        private static TagKey<Item> forgetag(String name) {
+        private static TagKey<Item> forgeTag(String name) {
             return ItemTags.create(new ResourceLocation("forge", name));
         }
     }
@@ -23,12 +23,14 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> METAL_DETECTOR_VALUABLES = tag("metal_detector_valuables");
         public static final TagKey<Block> NEEDS_ALEXANDRITE_TOOL = tag("needs_alexandrite_tool");
+        public static final TagKey<Block> PAXEL_MINEABLE = tag("mineable/paxel");
+
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(MCCourseMod.MOD_ID, name));
         }
 
-        private static TagKey<Block> forgetag(String name) {
+        private static TagKey<Block> forgeTag(String name) {
             return BlockTags.create(new ResourceLocation("forge", name));
         }
     }

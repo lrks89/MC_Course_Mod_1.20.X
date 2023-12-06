@@ -10,12 +10,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-// links to Deferred Registries
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MCCourseMod.MOD_ID);
 
-    //new Creative Mode Tab
     public static final RegistryObject<CreativeModeTab> COURSE_TAB = CREATIVE_MODE_TABS.register("course_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALEXANDRITE.get()))
                     .title(Component.translatable("creativetab.course_tab"))
@@ -31,6 +29,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ALEXANDRITE_SHOVEL.get());
                         output.accept(ModItems.ALEXANDRITE_AXE.get());
                         output.accept(ModItems.ALEXANDRITE_HOE.get());
+                        output.accept(ModItems.ALEXANDRITE_PAXEL.get());
 
                         output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
                         output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
@@ -50,10 +49,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ALEXANDRITE_WALL.get());
                         output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
-
                     }).build());
 
-    //Event Bus
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }

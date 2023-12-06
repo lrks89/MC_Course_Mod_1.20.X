@@ -1,7 +1,6 @@
 package net.lrks_89.mccourse.datagen;
 
 import net.lrks_89.mccourse.MCCourseMod;
-import net.lrks_89.mccourse.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -19,7 +18,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        //add tags here
+        // Add Item Tags here
 
     }
 

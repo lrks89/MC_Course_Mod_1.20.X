@@ -13,7 +13,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,8 +40,9 @@ public class MetalDetectorItem extends Item {
                     break;
                 }
             }
+
             if(!foundBlock) {
-                outputNoValuabeFound(player);
+                outputNoValuableFound(player);
             }
         }
 
@@ -59,16 +59,17 @@ public class MetalDetectorItem extends Item {
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.mccourse.metal_detector.tooltip"));
         }
+
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 
-    private void outputNoValuabeFound(Player player) {
+    private void outputNoValuableFound(Player player) {
         player.sendSystemMessage(Component.translatable("item.mccourse.metal_detector.no_valuables"));
     }
 
     private void outputValuableCoordinates(BlockPos below, Player player, Block block) {
         player.sendSystemMessage(Component.literal("Valuable Found: " + I18n.get(block.getDescriptionId())
-                + " at (" + below.getX() + ", " + below.getY() + ", " +below.getZ() + ")"));
+                + " at (" + below.getX() + ", " + below.getY() + ", " + below.getZ() + ")"));
     }
 
     private boolean isValuableBlock(BlockState blockState) {

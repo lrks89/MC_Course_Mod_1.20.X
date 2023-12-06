@@ -23,8 +23,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ALEXANDRITE);
         simpleItem(ModItems.RAW_ALEXANDRITE);
 
-        simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.KOHLRABI);
+        simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.PEAT_BRICK);
 
         handheldItem(ModItems.ALEXANDRITE_SWORD);
@@ -32,14 +32,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ALEXANDRITE_SHOVEL);
         handheldItem(ModItems.ALEXANDRITE_AXE);
         handheldItem(ModItems.ALEXANDRITE_HOE);
+        handheldItem(ModItems.ALEXANDRITE_PAXEL);
+
 
         buttonItem(ModBlocks.ALEXANDRITE_BUTTON, ModBlocks.ALEXANDRITE_BLOCK);
         fenceItem(ModBlocks.ALEXANDRITE_FENCE, ModBlocks.ALEXANDRITE_BLOCK);
         wallItem(ModBlocks.ALEXANDRITE_WALL, ModBlocks.ALEXANDRITE_BLOCK);
 
         simpleBlockItem(ModBlocks.ALEXANDRITE_DOOR);
-
     }
+
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
                 .texture("texture",  new ResourceLocation(MCCourseMod.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
@@ -54,6 +56,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
                 .texture("texture",  new ResourceLocation(MCCourseMod.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
+
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
